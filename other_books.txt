@@ -1,0 +1,75 @@
+<!-- single book -->
+        <!-- <article class="single-book">
+          <div class="book-container">
+            <img src="./images/taxation.jpg" alt="" />
+          </div>
+          <div class="book-details">
+            <h4>taxation digest</h4>
+            <p>by crescencio p co untian jr.</p>
+            <p>publisher: central book supply inc.</p>
+            <p>category: law book review</p>
+            <p>price: $20</p>
+          </div>
+          <a href="single-book.php" class="btn book-btn">view book</a>
+        </article> -->
+        <!-- end of single book -->
+        <!-- single book -->
+        <!-- <article class="single-book">
+          <div class="book-container">
+            <img src="./images/taxation.jpg" alt="" />
+          </div>
+          <div class="book-details">
+            <h4>taxation digest</h4>
+            <p>by crescencio p co untian jr.</p>
+            <p>publisher: central book supply inc.</p>
+            <p>category: law book review</p>
+            <p>price: $20</p>
+          </div>
+          <a href="single-book.php" class="btn book-btn">view book</a>
+        </article> -->
+        <!-- end of single book -->
+        <!-- single book -->
+        <!-- <article class="single-book">
+          <div class="book-container">
+            <img src="./images/taxation.jpg" alt="" />
+          </div>
+          <div class="book-details">
+            <h4>taxation digest</h4>
+            <p>by crescencio p co untian jr.</p>
+            <p>publisher: central book supply inc.</p>
+            <p>category: law book review</p>
+            <p>price: $20</p>
+          </div>
+          <a href="single-book.php" class="btn book-btn">view book</a>
+        </article> -->
+        <!-- end of single book -->
+        <!-- single book -->
+        <!-- <article class="single-book">
+          <div class="book-container">
+            <img src="./images/taxation.jpg" alt="" />
+          </div>
+          <div class="book-details">
+            <h4>taxation digest</h4>
+            <p>by crescencio p co untian jr.</p>
+            <p>publisher: central book supply inc.</p>
+            <p>category: law book review</p>
+            <p>price: $20</p>
+          </div>
+          <a href="single-book.php" class="btn book-btn">view book</a>
+        </article> -->
+        <!-- end of single book -->
+        <!-- single book -->
+        <!-- <article class="single-book">
+          <div class="book-container">
+            <img src="./images/taxation.jpg" alt="" />
+          </div>
+          <div class="book-details">
+            <h4>taxation digest</h4>
+            <p>by crescencio p co untian jr.</p>
+            <p>publisher: central book supply inc.</p>
+            <p>category: law book review</p>
+            <p>price: $20</p>
+          </div>
+          <a href="single-book.php" class="btn book-btn">view book</a>
+        </article> -->
+        <!-- end of single book -->

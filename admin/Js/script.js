@@ -20,3 +20,17 @@ closeBtn.addEventListener('click', function () {
 });
 // set year
 date.innerHTML = new Date().getFullYear();
+
+const dropBtn = document.getElementById('dropBtn');
+const dropdown = document.getElementById('dropdown');
+
+const postDropBtn = document.getElementById('postDropBtn');
+const postDropdown = document.getElementById('postDropdown');
+
+dropBtn.addEventListener('click', function () {
+  dropdown.classList.toggle('show-dropdown');
+});
+
+postDropBtn.addEventListener('click', function () {
+  postDropdown.classList.toggle('show-dropdown');
+});
