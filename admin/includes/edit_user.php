@@ -1,13 +1,11 @@
-<!-- Header -->
-<?php include "./includes/admin_header.php"; ?>
-
+<div class="section-center add-books-section">
 <?php
 
-  if(isset($_SESSION['username'])) {
+if(isset($_GET['edit_user'])){
+  $the_user_id = $_GET['edit_user'];
 
-    $username = $_SESSION['username'];
 
-  $stmt = "SELECT * FROM users WHERE username = '$username' ";
+  $stmt = "SELECT * FROM users WHERE user_id = $the_user_id ";
   $fetch_user_by_id = mysqli_query($connection, $stmt);
 
   while($row = mysqli_fetch_array($fetch_user_by_id)) {
@@ -23,9 +21,9 @@
     $user_zip_code = $row['user_zip_code'];
     $user_password = $row['user_password'];
   }
-  }
+}
 
-  if(isset($_POST['update_user'])){
+if(isset($_POST['edit_user'])){
   
   $user_firstname = $_POST['firstname'];
   $user_lastname = $_POST['lastname'];
@@ -40,21 +38,22 @@
   $user_password = $_POST['password'];
 
   if(!empty($user_password)){
+    $query = "SELECT user_password FROM users WHERE user_id = $the_user_id ";
+    $edit_user_password_query = mysqli_query($connection, $query);
+
+    confirmQuery($edit_user_password_query);
+
+    $row = mysqli_fetch_array($edit_user_password_query);
+    $db_user_password = $row['user_password'];
+    
+
+    if($db_user_password !== $user_password){
+
+      $hashed_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost' => 12));
+
+    }
       
-      $query = "SELECT user_password FROM users WHERE username = '{$username}' ";
-      $edit_user_password_query = mysqli_query($connection, $query);
-
-      confirmQuery($edit_user_password_query);
-
-      $row = mysqli_fetch_array($edit_user_password_query);
-      $db_user_password = $row['user_password'];
-      
-
-      if($db_user_password !== $user_password){
-
-        $hashed_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost' => 12));
-
-      }
+  
 
   $stmt = "UPDATE users SET ";
   $stmt .="user_firstname = '{$user_firstname}', ";
@@ -67,41 +66,18 @@
   $stmt .="user_zip_code = '{$user_zip_code}', ";
   $stmt .="user_gender = '{$user_gender}', ";
   $stmt .="user_role = '{$user_role}', ";
-  $stmt .="user_password = '{$user_password}' ";
-  $stmt .="WHERE username = '{$username}' ";
+  $stmt .="user_password = '{$hashed_password}' ";
+  $stmt .="WHERE user_id = {$the_user_id} ";
 
   $update_user = mysqli_query($connection, $stmt);
   confirmQuery($update_user);
-}
   }
+}
+
 ?>
 
-<!-- Header -->
-<?php include "./includes/admin_navigation.php"; ?>
-
-<!-- Side Nav -->
-<?php include "./includes/admin_sidebar.php"; ?>
-
-<style>
-th,td {
-    padding: 0.1rem 0.5rem;
-  }
-  th {
-    font-weight: bolder;
-  }
-  table {
-    border-collapse: collapse;
-  }
-</style>
-
-      <!-- page content -->
-      <section class="section">
-        <!-- section title -->
-      <h1>Users</h1>
-      <!-- end of section title -->
-      <div class="section-center">
-
-      <!-- registration form -->
+  <h1>Edit User</h1>
+<!-- registration form -->
 <div class="reg-form">
   <form action="" method="post" enctype="multipart/form-data">
     <div class="reg-form-row">
@@ -219,13 +195,8 @@ th,td {
           value="<?php echo $user_password; ?>"
         />
       </div>
-    <input type="submit" value="update profile" name="update_user" class="btn" />
+    <input type="submit" value="update" name="edit_user" class="btn" />
   </form>
 </div>
 <!-- end of registration form -->
-
-      </div>
-      </section>
-
-      <!-- footer -->
-      <?php include "./includes/admin_footer.php"; ?>
+</div>

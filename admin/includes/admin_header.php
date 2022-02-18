@@ -1,12 +1,20 @@
 <!-- ob start -->
 <?php ob_start(); ?>
 
+<?php session_start(); ?>
+
 <!-- db -->
 <?php include "../includes/db.php"; ?>
 
 <!-- functions -->
 <?php include "functions.php"; ?>
 
+<!-- redirect users !admin -->
+<?php
+if(!isset($_SESSION['user_role'])){
+  header("Location: ../index.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">

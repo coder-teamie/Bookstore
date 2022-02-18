@@ -22,7 +22,7 @@ th,td {
       <!-- page content -->
       <section class="section">
         <!-- section title -->
-      <h1>welcome to admin <?php echo $_SESSION['username']; ?></h1>
+      <h1></h1>
       <!-- end of section title -->
       <div class="page-content">
         <?php
@@ -34,12 +34,12 @@ th,td {
         }
 
         switch ($source){
-          case 'add_book';
-            include "includes/add_book.php";
+          case 'add_user';
+            include "includes/add_user.php";
             break;
 
-          case 'edit_book';
-            include "includes/edit_book.php";
+          case 'edit_user';
+            include "includes/edit_user.php";
             break;
 
           case '200';
@@ -47,7 +47,7 @@ th,td {
             break;
 
           default:
-            include "includes/view_all_books.php";
+            include "includes/view_all_users.php";
             break;
         }
         ?>

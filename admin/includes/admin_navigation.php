@@ -28,10 +28,21 @@
                 <a href="categories.php">categories</a>
               </li>
               <li>
-                <a href="./includes/view_all_bookings.php">bookings</a>
+                <a href="./purchases.php">purchases</a>
               </li>
               <li>
-                <a href="index.php">users</a>
+                <a id="userDropBtn">users
+                  <button class="user-icon">
+                    <i class="fa-solid fa-caret-down"></i>
+                  </button>
+                </a>
+                <div class="dropdown-content" id="userDropdown">
+                  <a href="./users.php" class="dropdown-link">View Users</a>
+                  <a href="users.php?source=add_user" class="dropdown-link">Add User</a>
+                </div>
+              </li>
+              <li>
+                <a href="comments.php">comments</a>
               </li>
               <li>
                 <a href="./profile.php">profile</a>
@@ -44,12 +55,12 @@
             <!-- user icon -->
             <div class="dropdown">
               <div class="user-icon">
-                <button class="user-icon" id="dropBtn">John
+                <button class="user-icon" id="dropBtn"><?php echo $_SESSION['username']; ?>
                   <i class="fa-solid fa-circle-user"></i>
                 </button>
                 <div class="dropdown-content" id="dropdown">
-                  <a href="" class="dropdown-link">Profile</a>
-                  <a href="" class="dropdown-link">Logout</a>
+                  <a href="./profile.php" class="dropdown-link">Profile</a>
+                  <a href="../includes/logout.php" class="dropdown-link">Logout</a>
                 </div>
               </div>
             </div>

@@ -29,7 +29,12 @@
       <div class="section-center books-page-center">
       <!-- end of section title -->
       <?php
-      $stmt = "SELECT * FROM books WHERE book_status = 'published'";
+
+        if(isset($_GET['category'])){
+          $the_category_id = $_GET['category'];
+        }
+
+      $stmt = "SELECT * FROM books WHERE book_category_id = $the_category_id ";
       $result = mysqli_query($connection, $stmt);
       
       while($row = mysqli_fetch_assoc($result)) {
@@ -38,7 +43,6 @@
         $book_publisher = $row['book_publisher'];
         $book_author = $row['book_author'];
         $book_price = $row['book_price'];
-        $book_status = $row['book_status'];
         $book_image = $row['book_image'];
         $book_category_id = $row['book_category_id'];
         
@@ -93,8 +97,6 @@
       <div class="section-title">
         <h1>featured <span>books</span></h1>
         <!-- <div class="underline"></div> -->
-        <br><br>
-        <h2>Coming Soon...</h2>
       </div>
       <!-- end of section title -->
     </section>

@@ -57,6 +57,8 @@ if(isset($_POST['update_book'])){
 
   $update_book = mysqli_query($connection, $stmt);
   confirmQuery($update_book);
+
+  echo "<p class='message'>Book Details Updated: <a href='../single-book.php?b_id={$the_book_id}'>View Book</a></p>";
 }
 
 ?>
@@ -91,6 +93,19 @@ if(isset($_POST['update_book'])){
   </div>
     <div class="reg-form-row">
       <select name="book_category" class="form-control" id="book_category">
+        <?php
+      $stmt = "SELECT * FROM categories WHERE category_id = $book_category_id";
+      $select_categories = mysqli_query($connection, $stmt);
+
+      confirmQuery($select_categories);
+
+      while($row = mysqli_fetch_assoc($select_categories)) {
+        $cat_id = $row['category_id'];
+        $cat_title = $row['category'];
+        echo "<option value='{$cat_id}'>{$cat_title}</option>";
+      }
+        ?>
+
       <?php
       
       $stmt = "SELECT * FROM categories";
@@ -135,13 +150,24 @@ if(isset($_POST['update_book'])){
       <input type="file" name="image">
     </div>
     <div class="reg-form-row">
-      <input
+      <!-- <input
       type="text"
       class="form-control"
       name="book_status"
       placeholder="status"
-      value="<?php echo $book_status; ?>"
-      />
+      value="<?php //echo $book_status; ?>"
+      /> -->
+
+      <select name="book_status" class="form-control" id="">
+        <option value='<?php echo $book_status; ?>'><?php echo $book_status; ?></option>
+        <?php
+          if($book_status == 'published') {
+            echo "<option value='draft'>draft</option>";
+          } else {
+            echo "<option value='published'>publish</option>";
+          }
+        ?>
+      </select>
     </div>
     <input type="submit" value="update" name="update_book" class="btn" />
   </form>

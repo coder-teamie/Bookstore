@@ -1,3 +1,6 @@
+<?php
+if(session_status() == PHP_SESSION_NONE) session_start();
+?>
       <!-- || Navbar || -->
       <nav class="nav" id="nav">
         <div class="nav-center">
@@ -20,17 +23,22 @@
             <li>
               <a href="contact.php">contact</a>
             </li>
-            <li>
-              <a href="forum.php">forum</a>
-            </li>
+            <?php if(isLoggedIn()): ?>
+              <li>
+                <a href="./admin/index.php">account</a>
+              </li>
+              <?php else: ?>
             <li>
               <a href="registration.php">register</a>
             </li>
-            <li>
-              <a href="./admin/index.php">admin</a>
-            </li>
+            <?php endif; ?>
           </ul>
           <!-- end of nav links -->
+          <?php if(isLoggedIn()): ?>
+          <a href="includes/logout.php" class="btn login-btn">Log Out</a>
+          <?php else: ?>
+          <a href="login.php" class="btn login-btn">Log In</a>
+          <?php endif; ?>
         </div>
       </nav>
       <!-- end of navbar -->
@@ -54,17 +62,25 @@
               <a href="contact.php">contact</a>
             </li>
             <li>
-              <a href="forum.php">forum</a>
-            </li>
-            <li>
               <a href="#search">search</a>
             </li>
+
+            <?php if(isLoggedIn()): ?>
+
+              <li>
+                <a href="./admin/index.php">account</a>
+              </li>
+              <li>
+                <a href="includes/logout.php">logout</a>
+              </li>
+
+              <?php else: ?>
+
             <li>
               <a href="registration.php">register</a>
             </li>
-            <li>
-              <a href="./admin/index.php">admin</a>
-            </li>
+
+          <?php endif; ?>
           </ul>
           <!-- end of sidebar links -->
           <!-- social icons -->

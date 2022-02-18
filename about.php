@@ -21,28 +21,20 @@
     </div>
     <div class="about-center section-center">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-        molestiae numquam, alias totam labore, et, iusto vitae sed recusandae
-        temporibus delectus. Repellendus, nisi! Vel, facere fugit laudantium
-        cumque at ratione officiis enim itaque iusto, magni amet corporis
-        animi, hic eligendi!
+        After all, there is no pleasure like perusing, in my opinion! - Pride and Prejudice by Jane Austen.
       </p>
+      <br>
       <p>
-        Laborum anim stumptown, chicharrones flannel veniam lorem listicle
-        wayfarers jean shorts shoreditch. Officia viral before they sold out
-        polaroid everyday carry glossier hashtag. Yr hashtag anim kombucha
-        godard lo-fi 3 wolf moon asymmetrical chillwave gochujang jianbing
-        before they sold out selvage ut. Migas bitters distillery pork belly
-        four loko cray prism bicycle rights +1 intelligentsia brunch man bun
-        cred twee et.
-      </p>
+        Respectfully, readers, <br/>
+        We provide a various classifications of Computer Science, Accountancy, Physical Therapist Architecture, Nursing HRM Law, Aviation Engineering and Tourism content reference books that are proposed by various foundations as part of their schedules across the Metro Manila.
+
+        Aside from that, we also have a large selection of E-Books available at affordable prices.
+        We want to increase customer loyalty by making bookstore simple and easy to find through web indexes, quick and simple payment options, and faster delivery systems. On the plus side, we're set up to offer stimulating deals and appealing limits on our books.
+
+        We earnestly trust that books can be an extraordinary wellspring of motivation with the ability to impact and shape youthful minds.
+        </p><br>
       <p>
-        Hexagon mixtape meh, drinking vinegar vaporware craft beer 90's
-        chambray raclette tumblr. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Error molestiae numquam, alias totam labore, et,
-        iusto vitae sed recusandae temporibus delectus. Repellendus, nisi!
-        Vel, facere fugit laudantium cumque at ratione officiis enim itaque
-        iusto, magni amet corporis animi, hic eligendi!
+        We humbly thank you for shopping with us. We gratefully acknowledge your contribution. You can reach out to us at universitybookph@gmail.com with any new ideas, allowing us to improvise for the satisfaction of our readers.
       </p>
     </div>
   </section>

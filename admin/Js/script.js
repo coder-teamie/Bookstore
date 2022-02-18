@@ -27,10 +27,17 @@ const dropdown = document.getElementById('dropdown');
 const postDropBtn = document.getElementById('postDropBtn');
 const postDropdown = document.getElementById('postDropdown');
 
+const userDropBtn = document.getElementById('userDropBtn');
+const userDropdown = document.getElementById('userDropdown');
+
 dropBtn.addEventListener('click', function () {
   dropdown.classList.toggle('show-dropdown');
 });
 
 postDropBtn.addEventListener('click', function () {
   postDropdown.classList.toggle('show-dropdown');
+});
+
+userDropBtn.addEventListener('click', function () {
+  userDropdown.classList.toggle('show-dropdown');
 });

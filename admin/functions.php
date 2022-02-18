@@ -1,5 +1,23 @@
 <?php
 
+# || QUERY ||
+// function query($query){
+//   global $connection;
+//   $result = mysqli_query($connection, $query);
+//   confirmQuery($result);
+//   return $result;
+// }
+
+# || FETCH RESULTS
+
+// function fetchRecords($result){
+//   return mysqli_fetch_array($result);
+// }
+
+// function count_records($result){
+//   return mysqli_num_rows($result);
+// }
+
 // CONFIRM QUERY
 function confirmQuery ($result){
   global $connection;
@@ -43,7 +61,7 @@ function insert_categories(){
   }
 }
 
-// DELETE QUERY
+// DELETE CATEGORY
 function delete_category() {
   global $connection;
 
@@ -54,6 +72,47 @@ function delete_category() {
     $delete_category = mysqli_query($connection, $stmt);
 
     header("Location: categories.php");
+  }
+}
+
+// DELETE CATEGORY
+function delete_comment() {
+  global $connection;
+
+  if(isset($_GET['delete'])){
+    $the_comment_id = $_GET['delete'];
+
+    $stmt = "DELETE FROM comments WHERE comment_id = {$the_comment_id} ";
+    $delete_category = mysqli_query($connection, $stmt);
+
+    header("Location: comments.php");
+  }
+}
+
+// APPROVE CATEGORY
+function approve_comment() {
+  global $connection;
+
+  if(isset($_GET['approve'])){
+    $the_comment_id = $_GET['approve'];
+
+    $stmt = "UPDATE comments SET comment_status = 'approved' WHERE comment_id = $the_comment_id";
+    $unapproved_query = mysqli_query($connection, $stmt);
+    confirmQuery($unapproved_query);
+    header("Location: comments.php");
+  }
+}
+// APPROVE CATEGORY
+function unapprove_comment() {
+  global $connection;
+
+  if(isset($_GET['unapprove'])){
+    $the_comment_id = $_GET['unapprove'];
+
+    $stmt = "UPDATE comments SET comment_status = 'unapproved' WHERE comment_id = $the_comment_id";
+    $unapproved_query = mysqli_query($connection, $stmt);
+    confirmQuery($unapproved_query);
+    header("Location: comments.php");
   }
 }
 
@@ -70,6 +129,142 @@ function delete_book(){
     confirmQuery($result);
 
     header("Location: books.php");
+  }
+}
+
+// DELETE USER
+function delete_user(){
+  global $connection;
+
+  if(isset($_GET['delete'])) {
+    $user_id = $_GET['delete'];
+
+    $stmt = "DELETE FROM users WHERE user_id = ${user_id}";
+    $delete_user = mysqli_query($connection, $stmt);
+
+    confirmQuery($delete_user);
+
+    header("Location: users.php");
+  }
+}
+
+// SWITCH TO ADMIN
+function switch_to_admin() {
+  global $connection;
+
+  if(isset($_GET['admin'])){
+    $the_user_id = $_GET['admin'];
+
+    $stmt = "UPDATE users SET user_role = 'admin' WHERE user_id = $the_user_id";
+    $make_admin_query = mysqli_query($connection, $stmt);
+
+    confirmQuery($make_admin_query);
+
+    header("Location: users.php");
+  }
+}
+// SWITCH TO SUBSCRIBER
+function switch_to_subscriber() {
+  global $connection;
+
+  if(isset($_GET['subscriber'])){
+    $the_user_id = $_GET['subscriber'];
+
+    $stmt = "UPDATE users SET user_role = 'subscriber' WHERE user_id = $the_user_id";
+    $make_subscriber_query = mysqli_query($connection, $stmt);
+
+    confirmQuery($make_subscriber_query);
+
+    header("Location: users.php");
+  }
+}
+
+# || CHECKING IF LOGGED IN ||
+function isLoggedIn(){
+  if(isset($_SESSION['user_role'])){
+
+    return true;
+
+  }
+    return false;
+
+}
+
+ # CHHECKING IF USER IS ADMIN
+  function is_admin(){
+
+    global $connection;
+
+    if(isLoggedIn()){
+
+    $query = "SELECT user_role FROM users WHERE user_id =".$_SESSION['user_id']."";
+    $result = mysqli_query($connection, $query);
+    $row = mysqli_fetch_array($result);
+
+    if($row['user_role'] == 'admin'){
+
+      return true;
+
+    } else {
+
+      return false;
+
+    }
+  }
+  return false;
+}
+
+# || APPROVE PURCHASE ||
+function approve_purchase () {
+  global $connection;
+
+  if(isset($_GET['complete_purchase'])){
+  $purchase_id = $_GET['complete_purchase'];
+  $query = "UPDATE purchases SET purchase_status = 'Completed' WHERE id = $purchase_id ";
+  $approve_query = mysqli_query($connection, $query);
+
+  header("Location: purchases.php");
+  }
+}
+
+# || DECLINE PURCHASE ||
+
+function decline_purchase () {
+  global $connection;
+
+  if(isset($_GET['decline_purchase'])){
+  $purchase_id = $_GET['decline_purchase'];
+  $query = "UPDATE purchases SET purchase_status = 'Declined' WHERE id = $purchase_id ";
+  $reject_query = mysqli_query($connection, $query);
+
+  header("Location: purchases.php");
+  }
+}
+
+# || COMPLETE PURCHASE ||
+
+// function complete_booking () {
+//   global $connection;
+
+//   if(isset($_GET['complete_booking'])){
+//   $purchase_id = $_GET['complete_booking'];
+//   $query = "UPDATE bookings SET purchase_status = 'Completed' WHERE id = $purchase_id ";
+//   $complete_query = mysqli_query($connection, $query);
+
+//   header("Location: bookings.php");
+//   }
+// }
+
+# || DELETING PURCHASE ||
+function delete_purchase () {
+  global $connection;
+  if(isset($_GET['delete'])){
+  $purchase_id = $_GET['delete'];
+  
+  $query = "DELETE FROM purchases WHERE id = {$purchase_id} ";
+  $delete_query = mysqli_query($connection, $query);
+
+  header("Location: purchases.php");
   }
 }
 

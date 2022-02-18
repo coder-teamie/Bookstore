@@ -1,5 +1,41 @@
 <!-- Header -->
-<?php include "./includes/admin_header.php"; ?>
+<?php ob_start(); ?>
+
+<?php session_start(); ?>
+
+<!-- db -->
+<?php include "../includes/db.php"; ?>
+
+<!-- functions -->
+<?php  //include "functions.php"; ?>
+
+<!-- redirect users !admin -->
+<?php
+// if(!isset($_SESSION['user_role'])){
+//   header("Location: ../index.php");
+// }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="../fontawesome-free-6.0.0-web/css/all.min.css"
+    />
+    <title>Admin Panel</title>
+  </head>
+
+  <!-- body -->
+
+  <body>
+    <main class="main">
+      <!-- header -->
+      <header class="header">
 
 <?php
 
@@ -67,20 +103,80 @@
   $stmt .="user_zip_code = '{$user_zip_code}', ";
   $stmt .="user_gender = '{$user_gender}', ";
   $stmt .="user_role = '{$user_role}', ";
-  $stmt .="user_password = '{$user_password}' ";
+  $stmt .="user_password = '{$hashed_password}' ";
   $stmt .="WHERE username = '{$username}' ";
 
   $update_user = mysqli_query($connection, $stmt);
   confirmQuery($update_user);
 }
   }
+
 ?>
 
 <!-- Header -->
-<?php include "./includes/admin_navigation.php"; ?>
+<nav class="nav" id="nav">
+  <div class="nav-center">
+    <!-- nav header -->
+    <div class="nav-header">
+      <h2>Admin Panel</h2>
+      <button class="nav-btn" id="nav-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- end of nav header -->
+    <!-- nav links -->
+    <ul class="nav-links">
+      <li>
+        <a href="index.php">dashboard</a>
+      </li>
+      <li>
+        <a href="./profile.php">profile</a>
+      </li>
+      <li>
+        <a href="../index.php">Home</a>
+      </li>
+    </ul>
+    <!-- end of nav links -->
+    <!-- user icon -->
+    <div class="dropdown">
+      <div class="user-icon">
+        <button class="user-icon" id="dropBtn"><?php echo $_SESSION['username']; ?>
+          <i class="fa-solid fa-circle-user"></i>
+        </button>
+        <div class="dropdown-content" id="dropdown">
+          <a href="./profile.php" class="dropdown-link">Profile</a>
+          <a href="../includes/logout.php" class="dropdown-link">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- end of navbar -->
+<!-- || Sidebar || -->
+        <aside id="sidebar" class="sidebar">
+          <div>
+            <button class="close-btn" id="close-btn">
+              <i class="fas fa-times"></i>
+            </button>
 
-<!-- Side Nav -->
-<?php include "./includes/admin_sidebar.php"; ?>
+            <!-- sidebar links -->
+            <ul class="sidebar-links">
+              <li>
+                <a href="index.php">dashboard</a>
+              </li>
+              <li>
+                <a href="index.php">profile</a>
+              </li>
+              <li>
+                <a href="../index.php">Home</a>
+              </li>
+            </ul>
+            <!-- end of sidebar links -->
+          </div>
+        </aside>
+        <!-- end of sidebar -->
+      </header>
+      <!-- end of header -->
 
 <style>
 th,td {
@@ -97,7 +193,7 @@ th,td {
       <!-- page content -->
       <section class="section">
         <!-- section title -->
-      <h1>Users</h1>
+      <h1>User Profile</h1>
       <!-- end of section title -->
       <div class="section-center">
 

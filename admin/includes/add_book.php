@@ -17,16 +17,20 @@ if(isset($_POST['create_book'])){
   
   $book_tags = $_POST['book_tags'];
   $book_status = $_POST['book_status'];
-  $book_comment_count = 4;
+  // $book_comment_count = 4;
   
   move_uploaded_file($book_image_temp, "../images/$book_image" );
 
-  $stmt = "INSERT INTO books(book_category_id, book_name, book_publisher, book_price, book_author,book_image, book_tags, book_status, book_comment_count, upload_date) ";
-  $stmt .= "VALUES('$book_category_id', '{$book_name}', '{$book_publisher}', {$book_price}, '{$book_author}', '{$book_image}', '{$book_tags}', '{$book_status}', '{$book_comment_count}', now())";
+  $stmt = "INSERT INTO books(book_category_id, book_name, book_publisher, book_price, book_author,book_image, book_tags, book_status, upload_date) ";
+  $stmt .= "VALUES('$book_category_id', '{$book_name}', '{$book_publisher}', {$book_price}, '{$book_author}', '{$book_image}', '{$book_tags}', '{$book_status}', now())";
 
   $create_book_query = mysqli_query($connection, $stmt);
 
   confirmQuery($create_book_query);
+
+  // $the_book_id = mysqli_insert_id($connection);
+
+  echo "Book Added: " . " " . "<a href='./books.php'>View Books</a>";
 }
 ?>
 

@@ -22,7 +22,7 @@ th,td {
       <!-- page content -->
       <section class="section">
         <!-- section title -->
-      <h1>welcome to admin <?php echo $_SESSION['username']; ?></h1>
+      <h1>Comments/Concerns</h1>
       <!-- end of section title -->
       <div class="page-content">
         <?php
@@ -47,7 +47,7 @@ th,td {
             break;
 
           default:
-            include "includes/view_all_books.php";
+            include "includes/view_all_comments.php";
             break;
         }
         ?>
