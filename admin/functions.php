@@ -1,23 +1,5 @@
 <?php
 
-# || QUERY ||
-// function query($query){
-//   global $connection;
-//   $result = mysqli_query($connection, $query);
-//   confirmQuery($result);
-//   return $result;
-// }
-
-# || FETCH RESULTS
-
-// function fetchRecords($result){
-//   return mysqli_fetch_array($result);
-// }
-
-// function count_records($result){
-//   return mysqli_num_rows($result);
-// }
-
 // CONFIRM QUERY
 function confirmQuery ($result){
   global $connection;
@@ -240,20 +222,6 @@ function decline_purchase () {
   header("Location: purchases.php");
   }
 }
-
-# || COMPLETE PURCHASE ||
-
-// function complete_booking () {
-//   global $connection;
-
-//   if(isset($_GET['complete_booking'])){
-//   $purchase_id = $_GET['complete_booking'];
-//   $query = "UPDATE bookings SET purchase_status = 'Completed' WHERE id = $purchase_id ";
-//   $complete_query = mysqli_query($connection, $query);
-
-//   header("Location: bookings.php");
-//   }
-// }
 
 # || DELETING PURCHASE ||
 function delete_purchase () {
