@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2022 at 11:19 AM
+-- Generation Time: Feb 19, 2022 at 10:59 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -98,8 +98,7 @@ INSERT INTO `comments` (`comment_id`, `comment_post_id`, `comment_author`, `comm
 (4, 3, 'Sandy Jones', 'sandy@cutemail.com', 'Heyyy Tea, you are making progress with your program.', 'unapproved', '2022-02-17'),
 (5, 4, 'Juan', 'juan@yahhooo.com', 'HEYYYYYYYYYYYYYYYYYYYY', 'unapproved', '2022-02-17'),
 (6, 4, 'Jesus', 'jman@chrirst.com', 'heyy there ', 'unapproved', '2022-02-17'),
-(7, 3, 'Jeramae', 'jera@gmail.com', 'This is for testing purposes only!', 'approved', '2022-02-17'),
-(8, 6, 'Faith', 'faith@gmail.com', 'Testing', 'unapproved', '2022-02-17');
+(7, 3, 'Jeramae', 'jera@gmail.com', 'This is for testing purposes only!', 'approved', '2022-02-17');
 
 -- --------------------------------------------------------
 
@@ -124,6 +123,15 @@ CREATE TABLE `purchases` (
   `payment_method` varchar(11) NOT NULL,
   `payment_status` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `purchases`
+--
+
+INSERT INTO `purchases` (`id`, `book_name`, `book_author`, `book_category`, `book_price`, `client_firstname`, `client_lastname`, `client_username`, `client_email`, `client_city`, `client_street_address`, `purchase_status`, `purchase_date`, `payment_method`, `payment_status`) VALUES
+(4, 'Introduction To Hospitality Management 5th Edition ', 'John Walker ', '2', 59.97, 'Williams', 'Dafoe', 'Will', 'will@smith.com', 'Las Pinas', '123 Main Avenue', 'Completed', '2022-02-19', 'paypal', 'Paid'),
+(5, 'Introduction To Hospitality Management 5th Edition ', 'John Walker ', '2', 59.97, 'Christine', 'Joy', 'Christine', 'c@gmail.com', 'LP', 'Main Avenue', 'pending', '2022-02-19', 'pending pay', 'pending pay'),
+(6, 'Introduction To Hospitality Management 5th Edition ', 'John Walker ', '2', 59.97, 'Christine', 'Joy', 'Christine', 'c@gmail.com', 'LP', 'Main Avenue', 'pending', '2022-02-19', 'mastercard', 'Paid');
 
 -- --------------------------------------------------------
 
@@ -152,7 +160,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `username`, `user_email`, `user_country`, `user_street_address`, `user_city`, `user_zip_code`, `user_gender`, `user_role`, `user_password`) VALUES
 (29, 'Christine', 'Joy', 'christine', 'c@gmail.com', 'PH', 'Main Avenue', 'LP', 12333, 'female', 'admin', '$2y$12$bpN4HPS0sm4ET7hVb43H0u8MbQICqMazam0rnPDkyhiT7u5Q8HBGe'),
-(30, 'Faith', 'Calawod', 'faith', 'f@gmail.com', 'PH', '123 Mango Street', 'LP', 17511, 'female', 'subscriber', '$2y$12$uDWE29tl1cux3fAcyEwGSuuv7K8lEGHC.qh4lr5h/F21XfPzcsnWm');
+(30, 'Faith', 'Calawod', 'faith', 'f@gmail.com', 'PH', '123 Mango Street', 'LP', 17511, 'female', 'subscriber', '$2y$12$uDWE29tl1cux3fAcyEwGSuuv7K8lEGHC.qh4lr5h/F21XfPzcsnWm'),
+(31, 'Williams', 'Dafoe', 'Will', 'will@smith.com', 'PH', '123 Main Avenue', 'Las Pinas', 17711, 'male', 'subscriber', '$2y$12$3zgW4pMipyZfn84toAfZvesLpxITbPG6vZMwYYdCSpBF37re.AxDK');
 
 --
 -- Indexes for dumped tables
@@ -214,13 +223,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `user_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

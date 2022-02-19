@@ -7,6 +7,16 @@
 </header>
 <!-- end of header -->
 
+
+<?php
+
+if(!isset($_SESSION['user_role'])) {
+  header("Location: login.php");
+} else {
+ 
+  ?>
+
+
 <?php
 
 
@@ -56,7 +66,7 @@ if(isset($_POST['checkout'])){
 }
 ?>
 
-<div class="section section-center">
+<div class="section section-center checkout-page">
   <!-- section title -->
   <div class="section-title">
     <h2>checkout</h2>
@@ -95,5 +105,6 @@ if(isset($_POST['checkout'])){
   </div>
 </div>
 
+<?php } ?>
   <!-- || Footer|| -->
   <?php include "includes/footer.php"; ?>
