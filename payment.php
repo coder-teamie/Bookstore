@@ -11,7 +11,7 @@
 
 ?>
 
-<div class="section section-center">
+<div class="section section-center payments">
   <!-- section title -->
   <div class="section-title">
     <h2>Payments Page</h2>

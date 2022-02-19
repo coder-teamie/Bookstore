@@ -811,6 +811,7 @@ Checkout
 */
 .process {
   margin: 0 auto;
+  min-height: calc(60vh - 5rem);
 }
 
 .process p,
@@ -859,4 +860,8 @@ a {
 
 .contact-footer a {
   text-decoration: underline;
+}
+
+.payments {
+  min-height: calc(100vh - 8.5rem);
 }

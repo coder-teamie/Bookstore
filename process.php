@@ -11,7 +11,7 @@
 
 ?>
 
-<div class="section section-center">
+<div class="section section-center process">
   <!-- section title -->
   <div class="section-title">
     <h2>Thank you!</h2>
@@ -19,7 +19,7 @@
   </div>
   <!-- end of section title -->
   <div class="process">
-    <p>Your Order has been submitted for processing, kindly give us a moment to confirm!</p>
+    <p>Your Order has been submitted for processing, kindly proceed to your account for payment!</p>
     <a href="index.php" class="btn checkout-btn">Back Home</a>
   </div>
 </div>
