@@ -402,8 +402,8 @@ Sidebar
 .close-btn {
   position: absolute;
   top: 1rem;
-  /* right: 2rem; */
-  left: 37%;
+  right: 2rem;
+  /* left: 37%; */
   font-size: 3rem;
   background: transparent;
   color: #bb2525;
@@ -508,7 +508,7 @@ Admin Widget
   color: #222;
   justify-content: space-between;
   align-items: center;
-  width: 18rem;
+  width: 100%;
   padding: 1rem;
   border-radius: var(--radius);
   margin-bottom: 2rem;

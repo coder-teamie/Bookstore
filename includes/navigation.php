@@ -35,7 +35,6 @@ if(session_status() == PHP_SESSION_NONE) session_start();
 
           </ul>
           <div class="login-container">
-
             <?php if(isLoggedIn()): ?>
             <a href="includes/logout.php" class="btn login-btn">Log Out</a>
             <?php else: ?>
