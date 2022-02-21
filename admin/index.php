@@ -23,8 +23,8 @@
 <?php include "./includes/admin_sidebar.php"; ?>
 
       <!-- page content -->
-      <section class="section">
-        <h1>welcome to admin <?php echo $_SESSION['username']; ?></h1>
+      <section class="section admin-homepage">
+        <h2>welcome to admin, <?php echo $_SESSION['username']; ?></h2>
 
         <div class="admin-widgets">
           <!-- single widget -->
@@ -132,12 +132,15 @@ $subscribed_users_count = mysqli_num_rows($fetch_subscribed_users);
 
         ?>
 
-        <script
+        <div class="chart">
+
+          
+          <script
           type="text/javascript"
           src="https://www.gstatic.com/charts/loader.js"
-        ></script>
-        <script type="text/javascript">
-          google.charts.load('current', { packages: ['bar'] });
+          ></script>
+          <script type="text/javascript">
+            google.charts.load('current', { packages: ['bar'] });
           google.charts.setOnLoadCallback(drawChart);
 
           function drawChart() {
@@ -148,15 +151,15 @@ $subscribed_users_count = mysqli_num_rows($fetch_subscribed_users);
                 $element_count = [$books_count, $books_published_count, $books_draft_count , $comments_count, $comments_unapproved_count, $users_count, $subscribed_users_count, $categories_count];
 
                 for($i = 0; $i < 8; $i++) {
-
+                  
                   echo "['{$element_text[$i]}'" . " , " . "{$element_count[$i]}],";
                 }
               ?>
               // ['Books', 1000],
             ]);
-
+            
             // ADD SUBTITLE LATER
-
+            
             var options = {
               chart: {
                 title: 'Bookstore Records',
@@ -166,16 +169,17 @@ $subscribed_users_count = mysqli_num_rows($fetch_subscribed_users);
 
             var chart = new google.charts.Bar(
               document.getElementById('columnchart_material')
-            );
+              );
 
             chart.draw(data, google.charts.Bar.convertOptions(options));
           }
-        </script>
+          </script>
         <!-- change width to auto later -->
         <div
           id="columnchart_material"
-          style="width: 1200px; height: 700px"
+          style="width: 900px; height: 500px; margin: 0 auto;"
         ></div>
+        </div>
       </section>
 
 <?php } ?>

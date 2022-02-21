@@ -223,7 +223,9 @@ Navbar
   cursor: pointer;
   justify-self: end;
 }
-
+.login-container {
+  display: none;
+}
 /* Media query */
 
 @media screen and (min-width: 768px) {
@@ -261,6 +263,10 @@ Navbar
     grid-template-columns: auto 1fr auto;
     align-items: center;
     justify-content: space-between;
+  }
+  .login-container {
+    display: block;
+    justify-self: end;
   }
 }
 

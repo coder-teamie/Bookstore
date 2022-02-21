@@ -62,6 +62,7 @@ if(isset($_POST['update_book'])){
 }
 
 ?>
+<h2>Edit Book</h2>
 <form action="" method="post" enctype="multipart/form-data">
   <div class="reg-form-row">
     <input

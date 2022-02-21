@@ -1,5 +1,7 @@
 <!-- <form action="" method="post"> -->
   <div class="books-page">
+
+    <h2>All books</h2>
 <table border="1" >
   <thead>
     <tr>

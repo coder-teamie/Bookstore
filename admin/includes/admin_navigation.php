@@ -2,7 +2,7 @@
           <div class="nav-center">
             <!-- nav header -->
             <div class="nav-header">
-              <h2>Admin Panel</h2>
+              <h2><a href="index.php">Dashboard</a></h2>
               <button class="nav-btn" id="nav-btn">
                 <i class="fas fa-bars"></i>
               </button>
@@ -10,9 +10,9 @@
             <!-- end of nav header -->
             <!-- nav links -->
             <ul class="nav-links">
-              <li>
+              <!-- <li>
                 <a href="index.php">dashboard</a>
-              </li>
+              </li> -->
               <li>
                 <a id="postDropBtn">books
                   <button class="user-icon">
@@ -44,21 +44,19 @@
               <li>
                 <a href="comments.php">comments</a>
               </li>
-              <li>
+              <!-- <li>
                 <a href="./profile.php">profile</a>
-              </li>
-              <li>
-                <a href="../index.php">Home</a>
-              </li>
+              </li> -->
             </ul>
             <!-- end of nav links -->
             <!-- user icon -->
-            <div class="dropdown">
+            <div class="dropdown user-dropdown">
               <div class="user-icon">
-                <button class="user-icon" id="dropBtn"><?php echo $_SESSION['username']; ?>
+                <button class="user-icon username" id="dropBtn"><?php echo $_SESSION['username']; ?>
                   <i class="fa-solid fa-circle-user"></i>
                 </button>
                 <div class="dropdown-content" id="dropdown">
+                  <a href="../index.php" class="dropdown-link">Home</a>
                   <a href="./profile.php" class="dropdown-link">Profile</a>
                   <a href="../includes/logout.php" class="dropdown-link">Logout</a>
                 </div>

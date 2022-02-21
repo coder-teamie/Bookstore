@@ -9,22 +9,22 @@
             <!-- sidebar links -->
             <ul class="sidebar-links">
               <li>
-                <a href="index.php">dashboard</a>
+                <a href="./books.php">books</a>
               </li>
               <li>
-                <a href="index.php">books</a>
+                <a href="categories.php">categories</a>
               </li>
               <li>
-                <a href="index.php">categories</a>
+                <a href="./purchases.php">purchases</a>
               </li>
               <li>
-                <a href="index.php">bookings</a>
+                <a href="./users.php">users</a>
               </li>
               <li>
-                <a href="index.php">users</a>
+                <a href="comments.php">comments</a>
               </li>
               <li>
-                <a href="index.php">profile</a>
+                <a href="./profile.php">profile</a>
               </li>
               <li>
                 <a href="../index.php">Home</a>

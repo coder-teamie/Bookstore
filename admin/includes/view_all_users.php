@@ -1,5 +1,5 @@
 <div class="users">
-  <h1>All Users</h1>
+  <h2>All Users</h2>
   <table border="1" >
     <thead>
     <tr>

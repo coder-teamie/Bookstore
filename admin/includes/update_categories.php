@@ -13,9 +13,11 @@
               $cat_id = $row['category_id'];
               $cat_title = $row['category'];
 
+              $msg = "";
           ?>
 
                 <input type="text" value="<?php if(isset($cat_title)){ echo $cat_title; } ?>" class="form-control" id="cat_title" name="cat_title">
+
                 
         <?php } } ?>
 
@@ -32,11 +34,17 @@
             if(!$update_category){
               die("QUERY FAILED" . mysqli_error($connection));
             }
+
+            header("Location: ./categories.php");
+
+            $msg = "Category Updated";
+
           }
         ?>
         
         </div>
-          <div class="form-group">
+        <div class="form-group">
+            <?php echo $msg; ?>
             <input type="submit" value="update category" class="btn add-category" name="update_category">
           </div>
         </form>

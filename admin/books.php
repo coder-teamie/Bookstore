@@ -20,9 +20,9 @@ th,td {
 </style>
 
       <!-- page content -->
-      <section class="section">
+      <section class="section books-center">
         <!-- section title -->
-      <h1>welcome to admin <?php echo $_SESSION['username']; ?></h1>
+      <!-- <h2>All books</h2> -->
       <!-- end of section title -->
       <div class="page-content">
         <?php

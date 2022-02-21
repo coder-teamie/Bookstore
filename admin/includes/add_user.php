@@ -32,7 +32,7 @@ if(isset($_POST['add_user'])){
 
 
 <!-- section title -->
-  <h1>Add User</h1>
+  <h2>Add User</h2>
 <!-- end of section title -->
 <!-- registration form -->
 <div class="reg-form">

@@ -7,7 +7,7 @@
 <!-- Side Nav -->
 <?php include "./includes/admin_sidebar.php"; ?>
 
-<div class="section section-center">
+<div class="section section-center purchases-center">
   <div class="section-title purchases-title">
     <h2>purchases </h2>
   </div>

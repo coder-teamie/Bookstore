@@ -33,6 +33,7 @@ if(isset($_POST['create_book'])){
   echo "Book Added: " . " " . "<a href='./books.php'>View Books</a>";
 }
 ?>
+<h2>Add Book</h2>
 
 <form action="" method="post" enctype="multipart/form-data">
   <div class="reg-form-row">

@@ -32,13 +32,17 @@ if(session_status() == PHP_SESSION_NONE) session_start();
               <a href="registration.php">register</a>
             </li>
             <?php endif; ?>
+
           </ul>
+          <div class="login-container">
+
+            <?php if(isLoggedIn()): ?>
+            <a href="includes/logout.php" class="btn login-btn">Log Out</a>
+            <?php else: ?>
+            <a href="login.php" class="btn login-btn">Log In</a>
+            <?php endif; ?>
+          </div>
           <!-- end of nav links -->
-          <?php if(isLoggedIn()): ?>
-          <a href="includes/logout.php" class="btn login-btn">Log Out</a>
-          <?php else: ?>
-          <a href="login.php" class="btn login-btn">Log In</a>
-          <?php endif; ?>
         </div>
       </nav>
       <!-- end of navbar -->
@@ -78,6 +82,9 @@ if(session_status() == PHP_SESSION_NONE) session_start();
 
             <li>
               <a href="registration.php">register</a>
+            </li>
+            <li>
+              <a href="login.php">Log In</a>
             </li>
 
           <?php endif; ?>

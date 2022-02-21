@@ -52,8 +52,7 @@ if(isset($_POST['edit_user'])){
       $hashed_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost' => 12));
 
     }
-      
-  
+    
 
   $stmt = "UPDATE users SET ";
   $stmt .="user_firstname = '{$user_firstname}', ";
@@ -76,7 +75,7 @@ if(isset($_POST['edit_user'])){
 
 ?>
 
-  <h1>Edit User</h1>
+  <h2>Edit User</h2>
 <!-- registration form -->
 <div class="reg-form">
   <form action="" method="post" enctype="multipart/form-data">
