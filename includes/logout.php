@@ -6,7 +6,6 @@
   $_SESSION['user_lastname'] = null;
   $_SESSION['username'] = null;
   $_SESSION['user_email'] = null;
-  $_SESSION['user_country'] = null;
   $_SESSION['user_street_address'] = null;
   $_SESSION['user_city'] = null;
   $_SESSION['user_zip_code'] = null;

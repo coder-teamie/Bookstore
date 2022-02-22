@@ -68,9 +68,6 @@ if(!isset($_SESSION['user_role'])){
       <li>
         <a href="./client_profile.php">profile</a>
       </li>
-      <li>
-        <a href="../index.php">Home</a>
-      </li>
     </ul>
     <!-- end of nav links -->
     <!-- user icon -->
@@ -80,6 +77,7 @@ if(!isset($_SESSION['user_role'])){
           <i class="fa-solid fa-circle-user"></i>
         </button>
         <div class="dropdown-content" id="dropdown">
+          <a href="../index.php" class="dropdown-link">Home</a>
           <a href="./client_profile.php" class="dropdown-link">Profile</a>
           <a href="../includes/logout.php" class="dropdown-link">Logout</a>
         </div>
@@ -187,7 +185,7 @@ if(isset($_SESSION['user_role'])){
 
         echo "<td> " . ucwords($db_payment_status) . " </td>";
         if($db_payment_status !== 'Paid'){
-            echo "<td><a href='../payment.php?b_id=${purchase_id}' class='btn'>Pay Now</a></td>";
+            echo "<td><a href='../payment.php?b_id=${purchase_id}' class='btn pay-btn'>Pay Now</a></td>";
         }
         echo "</tr>";
     }

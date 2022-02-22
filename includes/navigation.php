@@ -64,9 +64,6 @@ if(session_status() == PHP_SESSION_NONE) session_start();
             <li>
               <a href="contact.php">contact</a>
             </li>
-            <li>
-              <a href="#search">search</a>
-            </li>
 
             <?php if(isLoggedIn()): ?>
 

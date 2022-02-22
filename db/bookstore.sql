@@ -145,7 +145,6 @@ CREATE TABLE `users` (
   `user_lastname` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `user_email` varchar(255) NOT NULL,
-  `user_country` varchar(255) NOT NULL,
   `user_street_address` varchar(255) NOT NULL,
   `user_city` varchar(255) NOT NULL,
   `user_zip_code` int(11) NOT NULL,
@@ -158,10 +157,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `username`, `user_email`, `user_country`, `user_street_address`, `user_city`, `user_zip_code`, `user_gender`, `user_role`, `user_password`) VALUES
-(29, 'Christine', 'Joy', 'christine', 'c@gmail.com', 'PH', 'Main Avenue', 'LP', 12333, 'female', 'admin', '$2y$12$bpN4HPS0sm4ET7hVb43H0u8MbQICqMazam0rnPDkyhiT7u5Q8HBGe'),
-(30, 'Faith', 'Calawod', 'faith', 'f@gmail.com', 'PH', '123 Mango Street', 'LP', 17511, 'female', 'subscriber', '$2y$12$uDWE29tl1cux3fAcyEwGSuuv7K8lEGHC.qh4lr5h/F21XfPzcsnWm'),
-(31, 'Williams', 'Dafoe', 'Will', 'will@smith.com', 'PH', '123 Main Avenue', 'Las Pinas', 17711, 'male', 'subscriber', '$2y$12$3zgW4pMipyZfn84toAfZvesLpxITbPG6vZMwYYdCSpBF37re.AxDK');
+INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `username`, `user_email`, `user_street_address`, `user_city`, `user_zip_code`, `user_gender`, `user_role`, `user_password`) VALUES
+(29, 'Christine', 'Joy', 'christine', 'c@gmail.com', 'Main Avenue', 'LP', 12333, 'female', 'admin', '$2y$12$bpN4HPS0sm4ET7hVb43H0u8MbQICqMazam0rnPDkyhiT7u5Q8HBGe'),
+(30, 'Faith', 'Calawod', 'faith', 'f@gmail.com', '123 Mango Street', 'LP', 17511, 'female', 'subscriber', '$2y$12$uDWE29tl1cux3fAcyEwGSuuv7K8lEGHC.qh4lr5h/F21XfPzcsnWm'),
+(31, 'Williams', 'Dafoe', 'Will', 'will@smith.com', '123 Main Avenue', 'Las Pinas', 17711, 'male', 'subscriber', '$2y$12$3zgW4pMipyZfn84toAfZvesLpxITbPG6vZMwYYdCSpBF37re.AxDK');
 
 --
 -- Indexes for dumped tables

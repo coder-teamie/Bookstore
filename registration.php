@@ -14,7 +14,6 @@ if(isset($_POST['register'])) {
   $username = $_POST['username'];
   $user_email = $_POST['email'];
   $user_gender = $_POST['user_gender'];
-  $user_country = $_POST['country'];
   $user_city = $_POST['city'];
   $user_street_address = $_POST['street_address'];
   $user_zip_code = $_POST['zip_code'];
@@ -25,7 +24,6 @@ if(isset($_POST['register'])) {
   $username = mysqli_real_escape_string($connection,$username);
   $user_email = mysqli_real_escape_string($connection,$user_email);
   $user_gender = mysqli_real_escape_string($connection,$user_gender);
-  $user_country = mysqli_real_escape_string($connection,$user_country);
   $user_city = mysqli_real_escape_string($connection,$user_city);
   $user_street_address = mysqli_real_escape_string($connection,$user_street_address);
   $user_zip_code = mysqli_real_escape_string($connection,$user_zip_code);
@@ -33,8 +31,8 @@ if(isset($_POST['register'])) {
 
   $user_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost'=> 12));
 
-  $stmt = "INSERT INTO users(user_firstname, user_lastname, username, user_email, user_country, user_street_address, user_city,  user_zip_code, user_gender, user_role, user_password) ";
-  $stmt .= "VALUES('{$user_firstname}', '{$user_lastname}', '{$username}', '{$user_email}', '{$user_country}', '{$user_street_address}', '{$user_city}', $user_zip_code, '{$user_gender}', 'subscriber','{$user_password}')";
+  $stmt = "INSERT INTO users(user_firstname, user_lastname, username, user_email, user_street_address, user_city,  user_zip_code, user_gender, user_role, user_password) ";
+  $stmt .= "VALUES('{$user_firstname}', '{$user_lastname}', '{$username}', '{$user_email}', '{$user_street_address}', '{$user_city}', $user_zip_code, '{$user_gender}', 'subscriber','{$user_password}')";
   
   $create_user = mysqli_query($connection, $stmt);
   
@@ -63,23 +61,25 @@ if(isset($_POST['register'])) {
         <div class="reg-form">
           <h4><?php echo $message; ?></h4>
           <form action="" method="post" autocomplete="off" autocapitalize="on">
-            <div class="reg-form-row">
-              <input
-                type="text"
-                class="form-control"
-                name="firstname"
-                placeholder="firstname"
-                required
-              />
-            </div>
-            <div class="reg-form-row">
-              <input
-                type="text"
-                class="form-control"
-                name="lastname"
-                placeholder="lastname"
-                required
-              />
+            <div class="rows">
+              <div class="reg-form-row">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="firstname"
+                  placeholder="firstname"
+                  required
+                />
+              </div>
+              <div class="reg-form-row">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="lastname"
+                  placeholder="lastname"
+                  required
+                />
+              </div>
             </div>
             <div class="reg-form-row">
               <select class="form-control" name="user_gender" id="">
@@ -106,33 +106,22 @@ if(isset($_POST['register'])) {
                 required
               />
             </div>
-            <div class="rows">
-              <div class="reg-form-row">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="country"
-                  placeholder="country"
-                  required
-                />
-              </div>
-              <div class="reg-form-row">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="city"
-                  placeholder="city"
-                  required
-                />
-              </div>
+            <div class="reg-form-row">
+              <input
+                type="text"
+                class="form-control"
+                name="street_address"
+                placeholder="address"
+                required
+              />
             </div>
             <div class="rows">
               <div class="reg-form-row">
                 <input
                   type="text"
                   class="form-control"
-                  name="street_address"
-                  placeholder="address"
+                  name="city"
+                  placeholder="city"
                   required
                 />
               </div>

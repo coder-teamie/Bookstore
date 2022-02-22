@@ -28,7 +28,6 @@
     $db_user_lastname = $row['user_lastname'];
     $db_username = $row['username'];
     $db_user_email = $row['user_email'];
-    $db_user_country = $row['user_country'];
     $db_user_street_address = $row['user_street_address'];
     $db_user_city = $row['user_city'];
     $db_user_zip_code = $row['user_zip_code'];
@@ -47,7 +46,6 @@
       $_SESSION['user_lastname'] = $db_user_lastname;
       $_SESSION['username'] = $db_username;
       $_SESSION['user_email'] = $db_user_email;
-      $_SESSION['user_country'] = $db_user_country;
       $_SESSION['user_street_address'] = $db_user_street_address;
       $_SESSION['user_city'] = $db_user_city;
       $_SESSION['user_zip_code'] = $db_user_zip_code;

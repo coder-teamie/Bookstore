@@ -10,7 +10,6 @@ if(isset($_POST['add_user'])){
   $user_email = $_POST['email'];
   $user_role = $_POST['user_role'];
   $user_gender = $_POST['user_gender'];
-  $user_country = $_POST['country'];
   $user_city = $_POST['city'];
   $user_street_address = $_POST['street_address'];
   $user_zip_code = $_POST['zip_code'];
@@ -19,8 +18,8 @@ if(isset($_POST['add_user'])){
 
   $user_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost' => 12));
 
-  $stmt = "INSERT INTO users(user_firstname, user_lastname, username, user_email, user_country, user_street_address, user_city,  user_zip_code, user_gender, user_role, user_password) ";
-  $stmt .= "VALUES('{$user_firstname}', '{$user_lastname}', '{$username}', '{$user_email}', '{$user_country}', '{$user_street_address}', '{$user_city}', $user_zip_code, '{$user_gender}', '{$user_role}','{$user_password}')";
+  $stmt = "INSERT INTO users(user_firstname, user_lastname, username, user_email, user_street_address, user_city,  user_zip_code, user_gender, user_role, user_password) ";
+  $stmt .= "VALUES('{$user_firstname}', '{$user_lastname}', '{$username}', '{$user_email}', '{$user_street_address}', '{$user_city}', $user_zip_code, '{$user_gender}', '{$user_role}','{$user_password}')";
 
   $create_user = mysqli_query($connection, $stmt);
 
@@ -36,25 +35,26 @@ if(isset($_POST['add_user'])){
 <!-- end of section title -->
 <!-- registration form -->
 <div class="reg-form">
-  
   <form action="" method="post" autocomplete="off" autocapitalize="on">
-    <div class="reg-form-row">
-      <label for="">Firstname:</label>
-      <input
-        type="text"
-        class="form-control"
-        name="firstname"
-        required
-      />
-    </div>
-    <div class="reg-form-row">
-      <label for="">Lastname:</label>
-      <input
-        type="text"
-        class="form-control"
-        name="lastname"
-        required
-      />
+    <div class="rows">
+      <div class="reg-form-row">
+        <label for="">Firstname:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="firstname"
+          required
+        />
+      </div>
+      <div class="reg-form-row">
+        <label for="">Lastname:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="lastname"
+          required
+        />
+      </div>
     </div>
     <div class="reg-form-row">
       <label for="username">Username:</label>
@@ -77,7 +77,7 @@ if(isset($_POST['add_user'])){
     <div class="reg-form-row">
       <label for="user_role">User Role:</label>
       <select name="user_role" class="form-control" id="user_role">
-      <option value="subscriber">---Select Options---</option>
+      <option value="subscriber">--Select Options--</option>
       <option value="admin">admin</option>
       <option value="subscriber">subscriber</option>
       </select>
@@ -93,31 +93,11 @@ if(isset($_POST['add_user'])){
     </div>
     <div class="rows">
       <div class="reg-form-row">
-        <label for="">Country:</label>
-        <input
-          type="text"
-          class="form-control"
-          name="country"
-          required
-        />
-      </div>
-      <div class="reg-form-row">
         <label for="">City:</label>
         <input
           type="text"
           class="form-control"
           name="city"
-          required
-        />
-      </div>
-    </div>
-    <div class="rows">
-      <div class="reg-form-row">
-        <label for="">Street Address:</label>
-        <input
-          type="text"
-          class="form-control"
-          name="street_address"
           required
         />
       </div>
@@ -130,6 +110,15 @@ if(isset($_POST['add_user'])){
         />
       </div>
     </div>
+      <div class="reg-form-row">
+        <label for="">Street Address:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="street_address"
+          required
+        />
+      </div>
     <div class="reg-form-row">
         <label for="">Password:</label>
         <input

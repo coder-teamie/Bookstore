@@ -13,13 +13,10 @@
 if(!isset($_SESSION['user_role'])) {
   header("Location: login.php");
 } else {
- 
-  ?>
 
+?>
 
 <?php
-
-
 
 if(isset($_GET['b_id'])) {
   $the_book_id = $_GET['b_id'];
@@ -66,7 +63,7 @@ if(isset($_POST['checkout'])){
 }
 ?>
 
-<div class="section section-center checkout-page">
+<div class="section-center checkout-page">
   <!-- section title -->
   <div class="section-title">
     <h2>checkout</h2>
@@ -79,7 +76,20 @@ if(isset($_POST['checkout'])){
         
         <input type="text" name="book_name" value="<?php echo ucwords($db_book_name); ?>" class="form-control" readonly>
         <input type="text" name="book_author" value="<?php echo ucwords($db_book_author); ?>" class="form-control" readonly>
-        <input type="text" name="book_category" value="<?php echo ucwords($db_book_category_id); ?>" class="form-control" readonly>
+
+        <?php
+            $stmt = "SELECT * FROM categories WHERE category_id = {$db_book_category_id}";
+            $select_categories = mysqli_query($connection, $stmt);
+
+            while($row = mysqli_fetch_assoc($select_categories)) {
+              $cat_id = $row['category_id'];
+              $category_title = $row['category'];
+            }
+            ?>
+            <select name="book_category" class="form-control" id="">
+              <option value="<?php echo $cat_id ?>"><?php echo ucwords($category_title); ?></option>
+            </select>
+        <!-- <input type="text" name="book_category" value="<?php echo ucwords($category_title); ?>" class="form-control" readonly> -->
         <input type="text" name="book_price" value="<?php echo ucwords($db_book_price); ?>" class="form-control" readonly>
         <h4>Client Details</h4>
         <?php 

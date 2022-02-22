@@ -8,21 +8,24 @@
 <!-- end of header -->
 
 <?php
+if(!isset($_SESSION['user_role'])) {
+  header("Location: login.php");
+} else {
 
 ?>
 
 <div class="section section-center process">
   <!-- section title -->
   <div class="section-title">
-    <h2>Thank you!</h2>
+    <h2>Book Rental</h2>
     <div class="underline"></div>
   </div>
   <!-- end of section title -->
   <div class="process">
-    <p>Your Order has been submitted for processing, kindly proceed to your <a href="admin/index.php">Account</a> for payment!</p>
+    <p>Sorry <?php echo $_SESSION['username']; ?>, this book is currently not available for rental.</p>
     <a href="index.php" class="btn checkout-btn">Back Home</a>
   </div>
 </div>
-
+<?php } ?>
   <!-- || Footer|| -->
   <?php include "includes/footer.php"; ?>

@@ -8,7 +8,6 @@
       <th>Lastname</th>
       <th>Username</th>
       <th>Email</th>
-      <th>Country</th>
       <th>Street Address</th>
       <th>City</th>
       <th>Zip Code</th>
@@ -33,7 +32,6 @@
         $user_lastname = $row['user_lastname'];
         $username = $row['username'];
         $user_email = $row['user_email'];
-        $user_country = $row['user_country'];
         $user_street_address = $row['user_street_address'];
         $user_city = $row['user_city'];
         $user_zip_code = $row['user_zip_code'];
@@ -48,7 +46,6 @@
         echo "<td>{$user_lastname}</td>";
         echo "<td>{$username}</td>";
         echo "<td>{$user_email}</td>";
-        echo "<td>{$user_country}</td>";
         echo "<td>{$user_street_address}</td>";
         echo "<td>{$user_city}</td>";
         echo "<td>{$user_zip_code}</td>";

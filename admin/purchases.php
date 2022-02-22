@@ -102,7 +102,7 @@ while($row = mysqli_fetch_assoc($display_purchase_info)){
     echo "<td><a onClick=\"javascript: return confirm('Are you sure you want to decline?'); \" href='purchases.php?decline_purchase={$purchase_id}'>Decline</a></td>";
     echo "<td><a onClick=\"javascript: return confirm('Are you sure you want to delete?'); \" href='purchases.php?delete={$purchase_id}'>Delete</a></td>";
     if($db_payment_status !== 'Paid'){
-        echo "<td><a href='../payment.php?b_id=${purchase_id}' class='btn'>Pay Now</a></td>";
+        echo "<td><a href='../payment.php?b_id=${purchase_id}' class='btn pay-btn'>Pay Now</a></td>";
     }
     echo "</tr>";
 }

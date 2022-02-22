@@ -53,7 +53,6 @@
     $user_email = $row['user_email'];
     $user_role = $row['user_role'];
     $user_gender = $row['user_gender'];
-    $user_country = $row['user_country'];
     $user_city = $row['user_city'];
     $user_street_address = $row['user_street_address'];
     $user_zip_code = $row['user_zip_code'];
@@ -69,7 +68,6 @@
   $user_email = $_POST['email'];
   $user_role = $_POST['user_role'];
   $user_gender = $_POST['user_gender'];
-  $user_country = $_POST['country'];
   $user_city = $_POST['city'];
   $user_street_address = $_POST['street_address'];
   $user_zip_code = $_POST['zip_code'];
@@ -80,7 +78,9 @@
       $query = "SELECT user_password FROM users WHERE username = '{$username}' ";
       $edit_user_password_query = mysqli_query($connection, $query);
 
-      confirmQuery($edit_user_password_query);
+      if(!$edit_user_password_query){
+        die("QUERY FAILED" . mysqli_error($connection));
+      }
 
       $row = mysqli_fetch_array($edit_user_password_query);
       $db_user_password = $row['user_password'];
@@ -97,7 +97,6 @@
   $stmt .="user_lastname = '{$user_lastname}', ";
   $stmt .="username = '{$username}', ";
   $stmt .="user_email = '{$user_email}', ";
-  $stmt .="user_country = '{$user_country}', ";
   $stmt .="user_street_address = '{$user_street_address}', ";
   $stmt .="user_city = '{$user_city}', ";
   $stmt .="user_zip_code = '{$user_zip_code}', ";
@@ -107,7 +106,9 @@
   $stmt .="WHERE username = '{$username}' ";
 
   $update_user = mysqli_query($connection, $stmt);
-  confirmQuery($update_user);
+  if(!$update_user) {
+    die("QUERY FAILED" . mysqli_error($connection));
+  }
 }
   }
 
@@ -132,9 +133,6 @@
       <li>
         <a href="./profile.php">profile</a>
       </li>
-      <li>
-        <a href="../index.php">Home</a>
-      </li>
     </ul>
     <!-- end of nav links -->
     <!-- user icon -->
@@ -144,6 +142,7 @@
           <i class="fa-solid fa-circle-user"></i>
         </button>
         <div class="dropdown-content" id="dropdown">
+          <a href="../index.php" class="dropdown-link">Home</a>
           <a href="./profile.php" class="dropdown-link">Profile</a>
           <a href="../includes/logout.php" class="dropdown-link">Logout</a>
         </div>
@@ -265,15 +264,6 @@ th,td {
     </div>
     <div class="rows">
       <div class="reg-form-row">
-        <label for="">Country:</label>
-        <input
-          type="text"
-          class="form-control"
-          name="country"
-          required
-          value="<?php echo $user_country; ?>"
-        />
-      </div>
       <div class="reg-form-row">
         <label for="">City:</label>
         <input
@@ -312,7 +302,6 @@ th,td {
           type="password"
           class="form-control"
           name="password"
-          value="<?php echo $user_password; ?>"
         />
       </div>
     <input type="submit" value="update profile" name="update_user" class="btn" />

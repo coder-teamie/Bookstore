@@ -825,7 +825,11 @@ a {
   margin: 0 auto;
   text-align: center;
 }
-
+.process a:first-child {
+  text-decoration: underline;
+  color: var(--clr-primary-5);
+  font-size: bolder;
+}
 .checkout-btn {
   display: block;
   margin: 0 auto;
@@ -873,6 +877,5 @@ a {
 }
 
 .checkout-page {
-  margin-top: -5rem;
-  min-height: 110vh;
+  min-height: 100vh;
 }

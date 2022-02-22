@@ -17,7 +17,6 @@
     $user_email = $row['user_email'];
     $user_role = $row['user_role'];
     $user_gender = $row['user_gender'];
-    $user_country = $row['user_country'];
     $user_city = $row['user_city'];
     $user_street_address = $row['user_street_address'];
     $user_zip_code = $row['user_zip_code'];
@@ -33,7 +32,6 @@
   $user_email = $_POST['email'];
   $user_role = $_POST['user_role'];
   $user_gender = $_POST['user_gender'];
-  $user_country = $_POST['country'];
   $user_city = $_POST['city'];
   $user_street_address = $_POST['street_address'];
   $user_zip_code = $_POST['zip_code'];
@@ -61,7 +59,6 @@
   $stmt .="user_lastname = '{$user_lastname}', ";
   $stmt .="username = '{$username}', ";
   $stmt .="user_email = '{$user_email}', ";
-  $stmt .="user_country = '{$user_country}', ";
   $stmt .="user_street_address = '{$user_street_address}', ";
   $stmt .="user_city = '{$user_city}', ";
   $stmt .="user_zip_code = '{$user_zip_code}', ";
@@ -104,25 +101,27 @@ th,td {
       <!-- registration form -->
 <div class="reg-form">
   <form action="" method="post" enctype="multipart/form-data">
-    <div class="reg-form-row">
-      <label for="">Firstname:</label>
-      <input
-        type="text"
-        class="form-control"
-        name="firstname"
-        value="<?php echo $user_firstname; ?>"
-        required
-      />
-    </div>
-    <div class="reg-form-row">
-      <label for="">Lastname:</label>
-      <input
-        type="text"
-        class="form-control"
-        name="lastname"
-        required
-        value="<?php echo $user_lastname; ?>"
-      />
+    <div class="rows">
+      <div class="reg-form-row">
+        <label for="">Firstname:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="firstname"
+          value="<?php echo $user_firstname; ?>"
+          required
+        />
+      </div>
+      <div class="reg-form-row">
+        <label for="">Lastname:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="lastname"
+          required
+          value="<?php echo $user_lastname; ?>"
+        />
+      </div>
     </div>
     <div class="reg-form-row">
       <label for="username">Username:</label>
@@ -169,16 +168,6 @@ th,td {
     </div>
     <div class="rows">
       <div class="reg-form-row">
-        <label for="">Country:</label>
-        <input
-          type="text"
-          class="form-control"
-          name="country"
-          required
-          value="<?php echo $user_country; ?>"
-        />
-      </div>
-      <div class="reg-form-row">
         <label for="">City:</label>
         <input
           type="text"
@@ -186,18 +175,6 @@ th,td {
           name="city"
           required
           value="<?php echo $user_city; ?>"
-        />
-      </div>
-    </div>
-    <div class="rows">
-      <div class="reg-form-row">
-        <label for="">Street Address:</label>
-        <input
-          type="text"
-          class="form-control"
-          name="street_address"
-          required
-          value="<?php echo $user_street_address; ?>"
         />
       </div>
       <div class="reg-form-row">
@@ -210,6 +187,16 @@ th,td {
         />
       </div>
     </div>
+      <div class="reg-form-row">
+        <label for="">Street Address:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="street_address"
+          required
+          value="<?php echo $user_street_address; ?>"
+        />
+      </div>
     <div class="reg-form-row">
         <label for="">Password:</label>
         <input
